@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 ///
-/// Paradigm Shift by HTML5 UP
+/// Story by HTML5 UP
 /// html5up.net | @ajlkn
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
@@ -8,12 +7,14 @@
 /* Box */
 
 	.box {
-		border: solid 2px _palette(border);
 		border-radius: _size(border-radius);
+		border: solid _size(border-width);
 		margin-bottom: _size(element-margin);
 		padding: 1.5rem;
 
-		> :last-child {
+		> :last-child,
+		> :last-child > :last-child,
+		> :last-child > :last-child > :last-child {
 			margin-bottom: 0;
 		}
 
@@ -22,29 +23,12 @@
 			border-radius: 0;
 			padding: 0;
 		}
-=======
-///
-/// Paradigm Shift by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
-
-/* Box */
-
-	.box {
-		border: solid 2px _palette(border);
-		border-radius: _size(border-radius);
-		margin-bottom: _size(element-margin);
-		padding: 1.5rem;
-
-		> :last-child {
-			margin-bottom: 0;
-		}
-
-		&.alt {
-			border: 0;
-			border-radius: 0;
-			padding: 0;
-		}
->>>>>>> 9189a4e4338f984d2bf6d69f13cb5459618152f2
 	}
+
+	@mixin color-box($p: null) {
+ 		.box {
+ 			border-color: _palette($p, border);
+ 		}
+	}
+
+	@include color-box;
